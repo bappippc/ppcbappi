@@ -100,7 +100,7 @@ add_filter( 'elementor/widget/render_content', function ( $content, $widget ) {
 
 function pb_is( $slug ) {
 	if ( 'home' === $slug ) { return is_front_page(); }
-	if ( 'blog' === $slug ) { return is_home() || is_singular( 'post' ) || is_category() || is_tag(); }
+	if ( 'blog' === $slug ) { return is_home() || is_singular( 'post' ) || is_category() || is_tag() || is_search() || is_author() || is_date(); }
 	if ( is_page() ) {
 		$p = get_post();
 		if ( $p->post_name === $slug ) { return true; }
